@@ -1,17 +1,19 @@
 import React from "react";
 import "./App.css";
-import { Carousel, Button } from "react-bootstrap";
+import { Carousel, Button, Form, Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 
 function App() {
   let Img = styled.img`
-  padding: 10px;
-  height : 20rem;
+    padding: 10px;
+    height: 20rem;
   `;
 
   let PaddingDiv = styled.div`
-  padding: 20px;
+    padding: 20px;
   `;
+
+  let [Number, ChangeNum] = useState('');
 
   return (
     <div className="App">
@@ -52,8 +54,18 @@ function App() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <Form>
+        <Form.Group as={Row} className="1">
+            <Form.Label column sm="2">
+              전화번호
+            </Form.Label>
+          <Col sm="5">
+            <Form.Control onChange={(e)=>{ console.log(e.target.value)}} type="text" id="inputPhoneNum" />
+          </Col>
+        </Form.Group>
+      </Form>
       <PaddingDiv>
-        <Button variant="primary">QR 코드 생성하기</Button>{" "}
+        <Button variant="primary">QR 코드 생성하기</Button>
       </PaddingDiv>
     </div>
   );
