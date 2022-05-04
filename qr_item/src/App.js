@@ -13,7 +13,7 @@ function App() {
     padding: 20px;
   `;
 
-  let [Number, ChangeNum] = useState('');
+  // let [Number, ChangeNum] = useState('');
 
   return (
     <div className="App">
@@ -54,19 +54,38 @@ function App() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Form>
-        <Form.Group as={Row} className="1">
-            <Form.Label column sm="2">
-              전화번호
-            </Form.Label>
-          <Col sm="5">
-            <Form.Control onChange={(e)=>{ console.log(e.target.value)}} type="text" id="inputPhoneNum" />
-          </Col>
+      <h4>QR 생성을 위해서 정보를 입력해주세요!</h4>
+      <Form className="form-box">
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label column sm="3">
+            이름
+          </Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
+            type="text"
+            id="inputName"
+            placeholder="Name"
+          />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="forNumber">
+          <Form.Label column sm="3">
+            전화번호
+          </Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
+            type="text"
+            id="inputPhoneNum"
+            placeholder="Phone Number"
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          QR 코드 생성하기
+        </Button>
       </Form>
-      <PaddingDiv>
-        <Button variant="primary">QR 코드 생성하기</Button>
-      </PaddingDiv>
     </div>
   );
 }
