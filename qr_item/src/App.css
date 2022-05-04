@@ -1,7 +1,9 @@
 .form-box {
-  background-color: #b8d0ff;
-  text-align: left;
+   text-align: left;
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
+
 
 .App {
   text-align: center;

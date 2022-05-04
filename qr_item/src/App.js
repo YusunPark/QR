@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Carousel, Button, Form, Col, Row } from "react-bootstrap";
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 function App() {
   let Img = styled.img`
@@ -61,6 +62,7 @@ function App() {
             이름
           </Form.Label>
           <Form.Control
+            className="input-box"
             onChange={(e) => {
               console.log(e.target.value);
             }}
@@ -74,6 +76,7 @@ function App() {
             전화번호
           </Form.Label>
           <Form.Control
+            className="input-box"
             onChange={(e) => {
               console.log(e.target.value);
             }}
@@ -82,10 +85,10 @@ function App() {
             placeholder="Phone Number"
           />
         </Form.Group>
+      </Form>
         <Button variant="primary" type="submit">
           QR 코드 생성하기
         </Button>
-      </Form>
     </div>
   );
 }
