@@ -1,15 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Create from "../routes/Create";
+import Home from "../routes/Home";
 
-import Home from "./routes/Home";
-import Create from "./routes/Create";
-import "./styles/App.css";
-
-function App() {
-  
-
-  // let [Number, ChangeNum] = useState('');
-
+const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -18,6 +12,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
-export default App;
+export default Router;
