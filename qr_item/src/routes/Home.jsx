@@ -1,10 +1,16 @@
 import React from "react";
 import { Carousel, Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 import styled from "styled-components";
+import "../styles/Home.css";
+
 
 function Home() {
+
+  let navigate = useNavigate();
+
   let Img = styled.img`
     padding: 10px;
     height: 20rem;
@@ -49,8 +55,9 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <h4>QR 생성을 위해서 정보를 입력해주세요!</h4>
+
       <Form className="form-box">
+        <h4>QR 생성을 위해서 정보를 입력해주세요!</h4>
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label column sm="3">
             이름
@@ -79,10 +86,10 @@ function Home() {
             placeholder="Phone Number"
           />
         </Form.Group>
+        <Button variant="primary" onClick={()=>{navigate('/create');}}  type="submit">
+          QR 코드 생성하기
+        </Button>
       </Form>
-      <Button variant="primary" type="submit">
-        QR 코드 생성하기
-      </Button>
     </>
   );
 }
