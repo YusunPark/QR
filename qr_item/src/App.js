@@ -9,6 +9,9 @@ import styled from "styled-components";
 import "./styles/Home.css";
 
 function App() {
+  let [name, submitName] = useState('')
+  let [phone, submitPhone] = useState('')
+
   let navigate = useNavigate();
 
   let Img = styled.img`
@@ -75,7 +78,9 @@ function App() {
                   <Form.Control
                     className="input-box"
                     onChange={(e) => {
+                      submitName(e.target.value);
                       console.log(e.target.value);
+                      console.log(name);
                     }}
                     type="text"
                     id="inputName"
@@ -89,6 +94,8 @@ function App() {
                   <Form.Control
                     className="input-box"
                     onChange={(e) => {
+                      submitPhone(e.target.value);
+
                       console.log(e.target.value);
                     }}
                     type="text"
@@ -99,6 +106,7 @@ function App() {
                 <Button
                   variant="primary"
                   onClick={() => {
+                    console.log(name, phone);
                     navigate("/create");
                   }}
                   type="submit"
@@ -109,7 +117,7 @@ function App() {
             </>
           }
         />
-        <Route path="/create" element={<Create />} />
+        <Route path="/create" element={<Create props={[name, phone]} />} />
       </Routes>
     </>
   );
