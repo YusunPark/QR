@@ -6,7 +6,7 @@ import { Carousel, Button, Form } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import "./styles/Home.css";
+import "./styles/App.css";
 
 function App() {
   let [name, submitName] = useState('')
