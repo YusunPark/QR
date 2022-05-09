@@ -96,7 +96,6 @@ function App() {
                     onChange={(e) => {
                       submitPhone(e.target.value);
 
-                      console.log(e.target.value);
                     }}
                     type="text"
                     id="inputPhoneNum"
@@ -106,7 +105,6 @@ function App() {
                 <Button
                   variant="primary"
                   onClick={() => {
-                    console.log(name, phone);
                     navigate("/create");
                   }}
                   type="submit"
