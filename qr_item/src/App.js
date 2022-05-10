@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Create from "./routes/Create";
 
+let Img = styled.img`
+  padding: 10px;
+  height: 20rem;
+`;
+
+let CenterForm = styled.div`
+  text-align: left;
+  padding-left: 3rem;
+  padding-right: 3rem;
+`;
+
 function App() {
   let [name, submitName] = useState("");
   let [phone, submitPhone] = useState("");
@@ -114,16 +125,5 @@ function App() {
     </>
   );
 }
-
-const Img = styled.img`
-  padding: 10px;
-  height: 20rem;
-`;
-
-const CenterForm = styled.div`
-  text-align: left;
-  padding-left: 6rem;
-  padding-right: 6rem;
-`;
 
 export default App;
