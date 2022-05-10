@@ -13,17 +13,6 @@ function App() {
 
   let navigate = useNavigate();
 
-  let Img = styled.img`
-    padding: 10px;
-    height: 20rem;
-  `;
-
-  let CenterForm = styled.div`
-    text-align: left;
-    padding-left: 6rem;
-    padding-right: 6rem;
-  `;
-
   return (
     <>
       <Routes>
@@ -125,5 +114,16 @@ function App() {
     </>
   );
 }
+
+const Img = styled.img`
+  padding: 10px;
+  height: 20rem;
+`;
+
+const CenterForm = styled.div`
+  text-align: left;
+  padding-left: 6rem;
+  padding-right: 6rem;
+`;
 
 export default App;
