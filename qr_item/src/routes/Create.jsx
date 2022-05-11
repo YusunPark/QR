@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 import styled from "styled-components";
-import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 
 let CenterDiv = styled.div`
   text-align: center;
 `;
+
+
 
 function Create({ props }) {
   let size = 300;
@@ -20,22 +21,24 @@ function Create({ props }) {
 
   return (
     <CenterDiv>
-      <p>Hello React!</p>
-      {console.log(props)}
+      <br />
       <h2>{props[0]}님의 qr 코드 입니다.</h2>
       <p>아래의 QR코드를 다운로드 하고, 필요한 곳에 붙여서 사용하세요!</p>
       <div>
         <img src={url} alt="qr code" width="400" height="400" />
       </div>
+      <br />
 
-      <Button variant="outline-primary">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          새로 만들기
-        </Link>{" "}
-      </Button>
-      <Button variant="outline-primary" onClick={onDownloadBtn}>
-        이미지 다운로드
-      </Button>
+      <div>
+        <Button variant="primary" width="200px">
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            새로 만들기
+          </Link>
+        </Button>{" "}
+        <Button variant="primary" onClick={onDownloadBtn}>
+          이미지 다운로드
+        </Button>
+      </div>
     </CenterDiv>
   );
 }

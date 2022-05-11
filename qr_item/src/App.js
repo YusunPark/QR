@@ -6,16 +6,27 @@ import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import Create from "./routes/Create";
+import Background from "./img/Screenshot_56.png";
 
-let Img = styled.img`
-  padding: 10px;
-  height: 20rem;
-`;
+
 
 let CenterForm = styled.div`
   text-align: left;
   padding-left: 3rem;
   padding-right: 3rem;
+`;
+
+let BgImg = styled.div`
+  height: 100vh;
+  background-image: url(${Background});
+  background-size: 100% 100%;
+`;
+
+let CardDiv = styled.div`
+ 
+  margin: 15px;
+  height: 20rem;
+  background-color: #56545436;
 `;
 
 function App() {
@@ -30,45 +41,22 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+            <BgImg>
               <Carousel variant="dark">
                 <Carousel.Item>
-                  <Img
-                    className="d-block w-100"
-                    src="https://i.pinimg.com/originals/01/1c/df/011cdf2a20ced518d3fb2b448e8024f8.jpg"
-                    alt="First slide"
-                  />
+                  <CardDiv />
                   <Carousel.Caption>
-                    <h5>First slide label</h5>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
+                    <h5>분실물</h5>
+                    <p>나만의 QR코드를 부착하여 분실물을 쉽게 찾아보세요. </p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <Img
-                    className="d-block w-100"
-                    src="https://i.pinimg.com/originals/01/1c/df/011cdf2a20ced518d3fb2b448e8024f8.jpg"
-                    alt="Second slide"
-                  />
+                  <CardDiv />
                   <Carousel.Caption>
-                    <h5>Second slide label</h5>
+                    <h5>미아 방지</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <Img
-                    className="d-block w-100"
-                    src="https://i.pinimg.com/originals/01/1c/df/011cdf2a20ced518d3fb2b448e8024f8.jpg"
-                    alt="Third slide"
-                  />
-                  <Carousel.Caption>
-                    <h5>Third slide label</h5>
-                    <p>
-                      Praesent commodo cursus magna, vel scelerisque nisl
-                      consectetur.
+                      소중한 아이에게 부모님의 연락처를 가진 QR코드를
+                      선물해주세요.{" "}
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -117,10 +105,17 @@ function App() {
                   </Button>
                 </Form>
               </CenterForm>
-            </>
+            </BgImg>
           }
         />
-        <Route path="/create" element={<Create props={[name, phone]} />} />
+        <Route
+          path="/create"
+          element={
+            <BgImg>
+              <Create props={[name, phone]} />
+            </BgImg>
+          }
+        />
       </Routes>
     </>
   );
