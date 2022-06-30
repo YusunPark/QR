@@ -3,7 +3,7 @@
 2022년도 1학기 JARAM 세미나 준비 자료
 
 
-![image](https://user-images.githubusercontent.com/59571464/176726063-ed275d91-2539-46ee-9a28-9ec0956dbd2a.png)
+![image](https://user-images.githubusercontent.com/59571464/176726828-edec4a18-fad5-4965-accf-8d5e9e156cbd.png)
 
 
 ## 발표 자료
